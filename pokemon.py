@@ -1,4 +1,4 @@
-class Pokémon:
+class Pokemon:
     def __init__ (self, name, lvl, atkpts):
         self._name = name
         self._hp = 100
