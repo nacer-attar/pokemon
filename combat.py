@@ -23,3 +23,5 @@ class combat (Pokemon) :
     
     def removehp(self): 
 
+
+

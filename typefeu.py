@@ -13,8 +13,5 @@ class fire (Pokemon) :
                 self.type = 'fire'
 
     def weakness (self):
-
-
-
-        
-
+        pass
+    
