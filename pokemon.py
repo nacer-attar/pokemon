@@ -1,47 +1,60 @@
 import random
 
 class Pokemon:
-    def __init__(self):
-        self.__name = ""
-        self.type = []
-        self.__pv = 100
-        self.level = 0
-        self.attack_power = 0
+    def __init__ (self):
+        self.__name = " "
+        self.__hp = 50
+        self.lvl = 1
+        self.attack = 10
         self.defense = 0
-        self.names_pokemon = [["Bulbizzare", ["Poison", "Plante"]], ["Salamèche", ["Feu"]], ["Marill", ["Feu", "fée"]], ["Carapuce", ["Eau"]], ["Roucool", ["Normal", "Vol"]], ["Evoli", ["Normal"]]]
-
-    def setName(self, name):
+        self.type = []
+        self.pokedex = [["Bulbizarre",["Plante"]],
+                        ["Salamèche", ["Feu"]],
+                        ["Carapuce",  ["Eau"]],
+                        ["Evoli",     ["Normal"]]]
+    
+    def setname (self, name):
         self.__name = name
-
-    def getName(self):
+    def getname (self):
         return self.__name
 
-    def setPV(self, points):
-        self.__pv = points
+    def sethp (self, hp):
+        self.__hp = hp
+    def gethp (self):
+        return self.__hp
 
-    def getPV(self):
-        return self.__pv
+    def setlvl (self, lvl):
+        self.lvl = lvl
+    def getlvl (self):
+        return self.lvl
+    
+    def setattack (self, attack):
+        self.attack = attack
+    def getattack (self):
+        return self.attack
+    
+    def setdefense (self, defense):
+        self.defense = defense
+    def getdefense (self):
+        return self.defense
 
-    # Choix d'un pokemon depuis la liste 
-    def choosePokemon(self):
-        print('Choissisez votre pokemon parmis la liste ')
-        flag = False
-        for pokemon in self.names_pokemon:
-            chaine = ' - '.join(str(i) for i in pokemon[1])
-            print(pokemon[0] + " / Type: " + chaine)
-        while not flag:
-            input_name = input("> ") 
-            for name, type in self.names_pokemon:
-                if name == input_name:
-                    self.setName(input_name)
-                    self.type = type
-                    flag = True
-                    break
-            else:
-                print('Le pokemon n\'existe pas, Veuillez réessayez' )
-
-    # Pokemon adversaire aléatoire
-    def randomPokemon(self):
-        pokemon_random = random.choice(self.names_pokemon)
-        self.setName(pokemon_random[0])
-        self.type = pokemon_random[1]
+    def playerpokemon (self):
+        choice = False
+        for pokemon in self.pokedex:
+            pokelist = ' et '.join (str(i) for i in pokemon[1]) #on transforme la list de type en str
+            print (pokemon[0], "de type ", pokelist ) #print de la liste de pokemon
+        while not choice :
+            pokechoice = input ("Choisi un Pokemon depuis la liste : ")
+            for name, type in self.pokedex:
+                if name == pokechoice:
+                        self.setname(pokechoice)
+                        self.type = type
+                        choice = True
+                        break
+                else :
+                    print ("Si je mets plus de Pokemon on va me faire un procés...")
+    
+    def pokerandom(self):
+        random_pokemon = random.choice(self.pokedex)
+        self.setname = random_pokemon[0]
+        self.type = random_pokemon[1]
