@@ -3,7 +3,7 @@ import random
 class Pokemon:
     def __init__ (self):
         self.__name = " "
-        self.__hp = 50
+        self.__hp = 0
         self.lvl = 1
         self.attack = 10
         self.defense = 0
