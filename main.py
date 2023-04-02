@@ -1,6 +1,6 @@
 from stats import *
 from fight import *
-from pokemon import *
+from monstredepoche import *
 import time
 
 def start():
@@ -42,7 +42,7 @@ def game():
     pokemon_random.displayPokemon()
 
     print("")
-    print("Prêt pour le combat ? (Appuyer sur la touche entrée)")
+    print("Que le combat commence ! (Appuyer sur la touche entrée)")
     input()
     
     f = fight(my_pokemon, pokemon_random)

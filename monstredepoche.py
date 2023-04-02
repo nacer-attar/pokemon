@@ -56,5 +56,5 @@ class Pokemon:
     
     def pokerandom(self):
         random_pokemon = random.choice(self.pokedex)
-        self.setname = random_pokemon[0]
+        self.setname(random_pokemon[0])
         self.type = random_pokemon[1]
